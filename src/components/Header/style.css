@@ -11,10 +11,10 @@
 	line-height: 0.75rem;
 	color: rgb(32, 35, 41);
 	font-size: 3.75rem;
-	margin: 0px;
+	margin: 0;
 }
 .Home__subtitle {
-	transform: skew(-2 deg) translate(-6px);
+	transform: skew(-2deg) translate(-6px);
 	padding: 0.3125rem 0.25rem 0px;
 	background: rgb(32, 35, 41);
 	margin-top: 10px;

@@ -7,29 +7,28 @@ function  HeroListElement (props) {
 		<section>
 			<article className="CharacterCard_Wrapper">
 				<div data="card header" className="CharacterCard__ImgWrapper">
-					<div className="card-image"><img src="https://rickandmortyapi.com/api/character/avatar/69.jpeg" alt="Commander Rick"/>
-					</div>
+					<div className="card-image"><img src={image} alt={name}/></div>
 					<div className="CharacterCard__Title">
-						<h2 className="CharacterCard__Name">Commander Rick</h2>
-						<p className="CharacterCard__Description">id: 69 - created a year ago</p>
+						<h2 className="CharacterCard__Name">{name}</h2>
+						<p className="CharacterCard__Description">id: {id}</p>
 					</div>
 				</div>
 				<div data="card info" className="CharacterCard__InfoWrapper">
 					<div className="CharacterCard__TextWrapper">
-						<span>STATUS</span><p>Dead</p></div>
+						<span>STATUS</span><p>{status}</p></div>
 					<div className="CharacterCard__TextWrapper">
-						<span>SPECIES</span><p>Human</p></div>
+						<span>SPECIES</span><p>{species}</p></div>
 					<div className="CharacterCard__TextWrapper">
-						<span>GENDER</span><p>Male</p></div>
+						<span>GENDER</span><p>{gender}</p></div>
 					<div className="CharacterCard__TextWrapper">
-						<span>ORIGIN</span><p>unknown</p></div>
+						<span>ORIGIN</span><p>{origin.name}</p></div>
 					<div className="CharacterCard__TextWrapper">
-						<span>LAST LOCATION</span><p>Citadel of Ricks</p></div>
+						<span>LAST LOCATION</span><p>{location.name}</p></div>
 				</div>
 
 			</article>
 		</section>
 	)
-};
+}
 
 export default  HeroListElement;

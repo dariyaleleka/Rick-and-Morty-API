@@ -6,45 +6,52 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class HeroList extends Component  {
 	
 	constructor(props){
-		super(props)
+		super(props);
+		console.log("Constructor");
+	}
+
+	componentWillMount() {
+		console.log("componentWillMount")
 	}
 
 	state = {
-		heros: [],
+		heroes: [],
 		info: {}
 	};
 
-	createHerosListHtml = () => {
-		const {heros} = this.state;
+	createHeroesListHTML = () => {
+		const {heroes} = this.state;
 
-		if(heros.length) {
-			return heros.map(hero => <HeroListElement key={hero.id} hero={hero}/>)
+		if(heroes.length) {
+			return heroes.map(hero => <HeroListElement key={hero.id} hero={hero}/>)
 		}
-		return <div className="Home__SubTitle">No Hero yet</div>
+		return <div className="Home__SubTitle_a">No Hero yet</div>
 	};
 
 	render() {
-
-	return (
+		console.log("render");
+		return(
 		<section className="Home__showCaseWrapper">
 				<div className="Home__showCaseInner">
-					<HeroListElement/>
+					{this.createHeroesListHTML()}
 				</div>
 		</section>
 	 )
 	}
-		componentsDidMount (){
-		
-			// heros: [1,2,3,4]
-		
-		fetch("https://rickandmortyapi.com/api/character/")
-			.then(res => res.json())
-			.then (res => {
+		componentDidMount (){
+				console.log("componentDidMount");
+				// this.setState({
+				// 	heroes: [1, 2, 3]
+				// });
+
+			 fetch("https://rickandmortyapi.com/api/character/")
+				.then(res => res.json())
+				.then (res => {
 				this.setState({
-					heros: res.results
+					heroes: res.results
 				})
 			})
-	}
+		}
 }
 
 export default HeroList;
