@@ -4,54 +4,54 @@ import './style.css'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class HeroList extends Component  {
-	
-	constructor(props){
-		super(props);
-		console.log("Constructor");
-	}
 
-	componentWillMount() {
-		console.log("componentWillMount")
-	}
+    constructor(props){
+        super(props);
+        console.log("Constructor");
+    }
 
-	state = {
-		heroes: [],
-		info: {}
-	};
+    componentWillMount() {
+        console.log("componentWillMount")
+    }
 
-	createHeroesListHTML = () => {
-		const {heroes} = this.state;
+    state = {
+        heroes: [],
+        info: {}
+    };
 
-		if(heroes.length) {
-			return heroes.map(hero => <HeroListElement key={hero.id} hero={hero}/>)
-		}
-		return <div className="Home__SubTitle_a">No Hero yet</div>
-	};
+    createHeroesListHTML = () => {
+        const {heroes} = this.state;
 
-	render() {
-		console.log("render");
-		return(
-		<section className="Home__showCaseWrapper">
-				<div className="Home__showCaseInner">
-					{this.createHeroesListHTML()}
-				</div>
-		</section>
-	 )
-	}
-		componentDidMount (){
-				console.log("componentDidMount");
-				// this.setState({
-				// 	heroes: [1, 2, 3]
-				// });
+        if(heroes.length) {
+            return heroes.map(hero => <HeroListElement key={hero.id} hero={hero}/>)
+        }
+        return <div className="Home__SubTitle_a">No Hero yet</div>
+    };
 
-			 fetch("https://rickandmortyapi.com/api/character/")
-				.then(res => res.json())
-				.then (res => {
-				this.setState({
-					heroes: res.results
-				})
-			})
-		}
+    render() {
+        console.log("render");
+        return(
+            <section className="Home__showCaseWrapper">
+                <div className="Home__showCaseInner">
+                    {this.createHeroesListHTML()}
+                </div>
+            </section>
+        )
+    }
+    componentDidMount (){
+        console.log("componentDidMount");
+        // this.setState({
+        // 	heroes: [1, 2, 3]
+        // });
+
+        fetch("https://rickandmortyapi.com/api/character/")
+            .then(res => res.json())
+            .then (res => {
+                this.setState({
+                    heroes: res.results
+                })
+            })
+    }
 }
 
 export default HeroList;
