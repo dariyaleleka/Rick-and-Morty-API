@@ -31,11 +31,14 @@ class HeroList extends Component  {
     render() {
         console.log("render");
         return(
-            <section className="Home__showCaseWrapper">
-                <div className="Home__showCaseInner">
-                    {this.createHeroesListHTML()}
-                </div>
-            </section>
+         <Router>
+             <section className="Home__showCaseWrapper">
+                 <div className="Home__showCaseInner">
+                     {this.createHeroesListHTML()}
+                 </div>
+             </section>
+         </Router>
+
         )
     }
     componentDidMount (){
