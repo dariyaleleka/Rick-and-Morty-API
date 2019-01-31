@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import HeroListElement from '../HeroListElement';
 import './style.css'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class HeroList extends Component  {
 
@@ -31,14 +30,11 @@ class HeroList extends Component  {
     render() {
         console.log("render");
         return(
-         <Router>
              <section className="Home__showCaseWrapper">
                  <div className="Home__showCaseInner">
                      {this.createHeroesListHTML()}
                  </div>
              </section>
-         </Router>
-
         )
     }
     componentDidMount (){
