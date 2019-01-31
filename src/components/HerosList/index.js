@@ -47,7 +47,8 @@ class HeroList extends Component  {
             .then(res => res.json())
             .then (res => {
                 this.setState({
-                    heroes: res.results
+                    heroes: res.results,
+                    info: res.info
                 })
             })
     }
